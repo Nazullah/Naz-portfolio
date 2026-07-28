@@ -4,19 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Naz-portfolio</title>
+  <meta name="description" content="Nazullah Frontend Developer Portfolio">
+  <meta name="author" content="Nazullah">
+  <title>Nazullah | Frontend Developer Portfolio</title>
   <link rel="stylesheet" href="styles/project.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="icon" href="naz.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
 </head>
 
 <body>
 
   <!-- code for header -->
-  <header>
+  <header id="header">
     <div class="my-logo">
       <div class="logo-img">
         <img src="naz.jpg" alt="">
@@ -25,64 +30,454 @@
         <p class="logo-pp" id="p1">N</p>
         <p class="logo-pp" id="p2">U</p>
       </div>
-      
-    </div>
-    <div class="links">
-     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project-page.html">Projects</a></li>
-      <li><a href="contact-page.html">Contact Us</a></li>
-     </ul>
 
     </div>
-    <div class="header-btn">
-      
-     <button><a href="contact-page.html">Hire Me</a></button>
+    <div class="links" id="nav-links">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    
+    <div class="header-btn">
+
+      <button><a href="#contact">Hire Me</a></button>
+    </div>
+    <div class="menu-icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
   </header>
 
 
   <!-- code for hero section -->
-  <div class="hero-section">
-    <!-- contact button 2 -->
-     <button id="cont-btn2"><a href="">Hire Me</a></button>
-    <!-- code for pics section -->
-    <div class="discription">
-      <h1><span class="span1">Creative Diveloper</span> & <br><span class="span2">UI Enthusiast</span> </h1>
-    <p class="intro">Hi, I'm Nazullah.
-      I'm a frontend developer from Pakistan 
-      who enjoys building simple and clean websites. 
-      I'm still learning and improving every day, 
-      but I genuinely like turning ideas into something 
-      real on the screen. <br><br>
+  <main>
+    <div class="hero-section reveal">
 
-      Most of my work focuses on HTML, CSS, and 
-      a bit of JavaScript. I try to make my projects 
-      responsive and easy to use, even if they're small. <br><br>
+      <!-- code for pics section -->
+      <div class="description">
+        <h1><span class="span1">Creative Developer</span> & <br><span class="span2">UI Enthusiast</span> </h1>
+        <p class="intro">Hi, I'm Nazullah.
+          I'm a frontend developer from Pakistan
+          who enjoys building simple and clean websites.
+          I'm still learning and improving every day,
+          but I genuinely like turning ideas into something
+          real on the screen. <br><br>
 
-      Right now, I'm just focused on getting better, 
-      building more projects, and slowly growing my skills.</p>
+          Most of my work focuses on HTML, CSS, and
+          a bit of JavaScript. I try to make my projects
+          responsive and easy to use, even if they're small. <br><br>
+
+          Right now, I'm just focused on getting better,
+          building more projects, and slowly growing my skills.</p>
+      </div>
+      <!-- code for discription -->
+      <div class="pics">
+        <div class="imges" id="img1">
+          <img src="web-pic.jpeg" alt="">
+        </div>
+        <div class="imges" id="img2">
+          <img src="my pic.jpeg" alt="">
+        </div>
+        <div class="imges" id="img3">
+          <img src="web-pic-3.jpeg" alt="">
+        </div>
+      </div>
+
+
+
+
+
     </div>
-    <!-- code for discription -->
-    <div class="pics">
-      <div class="imges" id="img1">
-        <img src="web-pic.jpeg" alt="">
-      </div>
-      <div class="imges" id="img2">
-        <img src="my pic.jpeg" alt="">
-      </div>
-      <div class="imges" id="img3">
-        <img src="web-pic-3.jpeg" alt="">
-      </div>
-    </div>
 
-    
-      
-    
+    <!-- About Section -->
+    <section class="about-section reveal">
 
-  </div>
+      <div class="about-container">
 
+        <div class="about-title">
+          <h2>About Me</h2>
+          <span></span>
+        </div>
+
+        <div class="about-content">
+
+          <div class="about-card">
+            <h3>My Journey</h3>
+            <p>
+              I started my journey in web development with HTML and CSS.
+              My goal is to create clean, responsive, and user-friendly
+              websites that provide a great experience for users.
+            </p>
+          </div>
+
+
+          <div class="about-card">
+            <h3>My Approach</h3>
+            <p>
+              I focus on writing clean code, creating modern designs,
+              and building websites that work smoothly on all devices.
+              I always try to improve my skills through new projects.
+            </p>
+          </div>
+
+
+          <div class="about-card">
+            <h3>My Goal</h3>
+            <p>
+              My goal is to become a professional frontend developer
+              and work on real-world projects while continuously
+              learning modern technologies.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="about-skills">
+
+          <div>
+            <h4>HTML</h4>
+            <p>Semantic & Structured Pages</p>
+          </div>
+
+          <div>
+            <h4>CSS</h4>
+            <p>Responsive Modern Designs</p>
+          </div>
+
+          <div>
+            <h4>JavaScript</h4>
+            <p>Interactive Web Experiences</p>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section reveal">
+
+      <div class="skills-title">
+        <h2>My Skills</h2>
+        <span></span>
+        <p>
+          Technologies and tools I use to create modern and responsive websites.
+        </p>
+      </div>
+
+
+      <div class="skills-container">
+
+        <div class="skill-card">
+          <h3>HTML</h3>
+          <p>
+            Creating clean and semantic website structures.
+          </p>
+          <div class="skill-level">
+            <div class="html-level"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card">
+          <h3>CSS</h3>
+          <p>
+            Designing responsive layouts with modern styling.
+          </p>
+          <div class="skill-level">
+            <div class="css-level"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card">
+          <h3>JavaScript</h3>
+          <p>
+            Adding interaction and dynamic features to websites.
+          </p>
+          <div class="skill-level">
+            <div class="js-level"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card">
+          <h3>Responsive Design</h3>
+          <p>
+            Building websites that work on all screen sizes.
+          </p>
+          <div class="skill-level">
+            <div class="responsive-level"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card">
+          <h3>Git & GitHub</h3>
+          <p>
+            Managing code and tracking project changes.
+          </p>
+          <div class="skill-level">
+            <div class="git-level"></div>
+          </div>
+        </div>
+
+
+        <div class="skill-card">
+          <h3>UI Design</h3>
+          <p>
+            Creating simple and user-friendly interfaces.
+          </p>
+          <div class="skill-level">
+            <div class="ui-level"></div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section reveal">
+
+      <div class="projects-title">
+        <h2>My Projects</h2>
+        <span></span>
+        <p>
+          Some of my recent work and projects that showcase my skills.
+        </p>
+      </div>
+
+
+      <div class="projects-container">
+
+
+        <!-- Project 1 -->
+        <div class="project-card">
+
+          <div class="project-image">
+            <img src="project1.png" alt="Portfolio Website Project">
+          </div>
+
+          <div class="project-info">
+
+            <h3>Portfolio Website</h3>
+
+            <p>
+              A modern responsive portfolio website built with HTML
+              and CSS to showcase my skills and projects.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="live-btn">Live Demo</a>
+              <a href="#" class="github-btn">GitHub</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Project 2 -->
+        <div class="project-card">
+
+          <div class="project-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRUqdGCmwClXhUTlNVPVrHfx-Ko_BN282ysr-Os8InQ&s=10" alt="Landing Page Project">
+          </div>
+
+          <div class="project-info">
+
+            <h3>Modern Calculator</h3>
+
+            <p>
+              AModern responsive calculator with a clean UI built using HTML, CSS, and JavaScript.
+            </p>
+
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Responsive</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="live-btn">Live Demo</a>
+              <a href="#" class="github-btn">GitHub</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Project 3 -->
+        <div class="project-card">
+
+          <div class="project-image">
+            <img src="project3.png" alt="JavaScript Project">
+          </div>
+
+          <div class="project-info">
+
+            <h3>JavaScript Project</h3>
+
+            <p>
+              An interactive project created using JavaScript
+              with dynamic functionality.
+            </p>
+
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>DOM</span>
+              <span>UI</span>
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="live-btn">Live Demo</a>
+              <a href="#" class="github-btn">GitHub</a>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section reveal">
+
+      <div class="contact-title">
+        <h2>Contact Me</h2>
+        <span></span>
+        <p>
+          Have a project in mind? Let's work together and create something great.
+        </p>
+      </div>
+
+
+      <div class="contact-container">
+
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+
+          <h3>Let's Talk</h3>
+
+          <p>
+            I'm always interested in new projects and opportunities.
+            Feel free to reach out.
+          </p>
+
+
+          <div class="contact-item">
+            <h4>Email</h4>
+            <p>your-email@example.com</p>
+          </div>
+
+
+          <div class="contact-item">
+            <h4>Location</h4>
+            <p>Pakistan</p>
+          </div>
+
+
+          <div class="social-links">
+
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- Contact Form -->
+        <form class="contact-form">
+
+          <input type="text" placeholder="Your Name">
+
+          <input type="email" placeholder="Your Email">
+
+          <textarea placeholder="Your Message"></textarea>
+
+          <button type="submit">
+            Send Message
+          </button>
+
+        </form>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+
+      <div class="footer-container">
+
+        <div class="footer-brand">
+          <h2>Nazullah</h2>
+          <p>
+            Frontend Developer creating modern,
+            responsive and user-friendly websites.
+          </p>
+        </div>
+
+
+        <div class="footer-menu">
+          <h3>Navigation</h3>
+          <a href="#">About</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </div>
+
+
+        <div class="footer-connect">
+          <h3>Connect</h3>
+
+          <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fa-solid fa-envelope"></i> Email</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-line"></div>
+
+
+      <p class="copyright">
+        © 2026 Nazullah. All rights reserved.
+      </p>
+
+    </footer>
+  </main>
+
+  <button id="top-btn">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+<script src="portfolio.js"></script>
 </body>
 
 </html>
