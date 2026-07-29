@@ -15,7 +15,7 @@
     rel="stylesheet">
   <link rel="icon" href="naz.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
 </head>
 
 <body>
@@ -34,15 +34,13 @@
     </div>
     <div class="links" id="nav-links">
       <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-code"></i> Skills</a></li>
+        <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
       </ul>
     </div>
-    <div class="header-btn">
 
-      <button><a href="#contact">Hire Me</a></button>
-    </div>
     <div class="menu-icon">
       <i class="fa-solid fa-bars"></i>
     </div>
@@ -90,7 +88,7 @@
     </div>
 
     <!-- About Section -->
-    <section class="about-section reveal">
+    <section class="about-section reveal" id="about">
 
       <div class="about-container">
 
@@ -293,7 +291,9 @@
         <div class="project-card">
 
           <div class="project-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRUqdGCmwClXhUTlNVPVrHfx-Ko_BN282ysr-Os8InQ&s=10" alt="Landing Page Project">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKRUqdGCmwClXhUTlNVPVrHfx-Ko_BN282ysr-Os8InQ&s=10"
+              alt="Landing Page Project">
           </div>
 
           <div class="project-info">
@@ -311,7 +311,7 @@
             </div>
 
             <div class="project-buttons">
-              <a href="#" class="live-btn">Live Demo</a>
+              <a href="https://nazullah.github.io/calculaor/" class="live-btn">Live Demo</a>
               <a href="#" class="github-btn">GitHub</a>
             </div>
 
@@ -385,13 +385,13 @@
 
           <div class="contact-item">
             <h4>Email</h4>
-            <p>your-email@example.com</p>
+            <p>115nazullahnaz@gmail.com</p>
           </div>
 
 
           <div class="contact-item">
             <h4>Location</h4>
-            <p>Pakistan</p>
+            <p>KPK Pakistan</p>
           </div>
 
 
@@ -410,11 +410,11 @@
         <!-- Contact Form -->
         <form class="contact-form">
 
-          <input type="text" placeholder="Your Name">
-
-          <input type="email" placeholder="Your Email">
-
-          <textarea placeholder="Your Message"></textarea>
+          <input type="text" required placeholder="Your Name" id="sender-name" autocomplete="off">
+          <small class="error" id="n-error">Name is too short !</small>
+          <input type="email" required placeholder="Your Email" id="sender-email">
+          <small class="error" id="e-error">Not valid Email !</small>
+          <textarea placeholder="Your Message" required id="massage"></textarea>
 
           <button type="submit">
             Send Message
@@ -436,19 +436,27 @@
       <div class="footer-container">
 
         <div class="footer-brand">
-          <h2>Nazullah</h2>
+          <div class="my-logo" id="my-logo">
+            <div class="logo-img" id="logo-img">
+              <img src="naz.jpg" alt="">
+            </div>
+            <div class="logo-p" id="logo-p">
+              <p class="logo-pp" id="p1">N</p>
+              <p class="logo-pp" id="p2">U</p>
+            </div>
+
+          </div>
           <p>
-            Frontend Developer creating modern,
-            responsive and user-friendly websites.
+            Creating modern, responsive, and user-friendly web experiences with clean code and thoughtful design. Passionate about turning ideas into functional digital products.
           </p>
         </div>
 
 
         <div class="footer-menu">
           <h3>Navigation</h3>
-          <a href="#">About</a>
-          <a href="#">Projects</a>
-          <a href="#">Contact</a>
+          <a href="#about"><i class="fa-solid fa-user"></i> About</a>
+          <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+          <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
         </div>
 
 
@@ -456,8 +464,8 @@
           <h3>Connect</h3>
 
           <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="#"><i class="fa-solid fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/naz-ullah-617752425?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#contact"><i class="fa-solid fa-envelope"></i> Email</a>
 
         </div>
 
@@ -475,9 +483,9 @@
   </main>
 
   <button id="top-btn">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-<script src="portfolio.js"></script>
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script src="portfolio.js"></script>
 </body>
 
 </html>
