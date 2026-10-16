@@ -23,8 +23,12 @@ topBtn.addEventListener("click", () => {
 });
 
 // ---------- Contact form ----------
-// Change this to your deployed backend URL (use http://localhost:3000 while testing)
-const API_URL = "http://localhost:3000/api/contact";
+// On the live Vercel site the backend lives at the same address (/api/contact).
+// On your computer (Live Server) it falls back to the local Node server.
+const API_URL =
+  location.hostname === "127.0.0.1" || location.hostname === "localhost"
+    ? "http://localhost:3000/api/contact"
+    : "/api/contact";
 
 const form = document.querySelector(".contact-form");
 const senderName = document.querySelector("#sender-name");
