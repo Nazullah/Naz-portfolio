@@ -1,122 +1,91 @@
+// ---------- Mobile menu ----------
 const menuBtn = document.querySelector(".menu-icon");
 const navLinks = document.querySelector("#nav-links");
 
 menuBtn.addEventListener("click", () => {
-
   navLinks.classList.toggle("active");
-  navLinks.addEventListener('click',function(){
-    navLinks.classList.remove("active");
-  });
-
 });
 
+// Close the menu when a link is clicked (registered once, not on every click)
+navLinks.addEventListener("click", () => {
+  navLinks.classList.remove("active");
+});
 
-//code for bottom to top button
+// ---------- Back to top button ----------
 const topBtn = document.getElementById("top-btn");
 
-
 window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 500) {
-
-    topBtn.style.display = "flex";
-
-  } else {
-
-    topBtn.style.display = "none";
-
-  }
-
+  topBtn.style.display = window.scrollY > 500 ? "flex" : "none";
 });
 
 topBtn.addEventListener("click", () => {
-
-  window.scrollTo({
-
-    top: 0,
-
-    behavior: "smooth"
-
-  });
-
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// ---------- Contact form ----------
+// Change this to your deployed backend URL (use http://localhost:3000 while testing)
+const API_URL = "http://localhost:3000/api/contact";
 
-//code for form
 const form = document.querySelector(".contact-form");
 const senderName = document.querySelector("#sender-name");
 const senderEmail = document.querySelector("#sender-email");
 const message = document.querySelector("#massage");
+const honeypot = document.querySelector("#website");
+const statusEl = document.querySelector("#form-status");
+const submitBtn = form.querySelector("button[type='submit']");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+const nameError = document.querySelector("#n-error");
+const emailError = document.querySelector("#e-error");
+const messageError = document.querySelector("#m-error");
 
-    let isValid = true;
-
-    // Name Validation
-    if (senderName.value.trim().length < 3) {
-        document.querySelector("#n-error").style.display = "block";
-        isValid = false;
-    } else {
-        document.querySelector("#n-error").style.display = "none";
-    }
-
-    // Email Validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(senderEmail.value.trim())) {
-        document.querySelector("#e-error").style.display = "block";
-        isValid = false;
-    } else {
-        document.querySelector("#e-error").style.display = "none";
-    }
-
-    // Message Validation
-    if (message.value.trim().length < 10) {
-        alert("Message must be at least 10 characters.");
-        isValid = false;
-    }
-
-    // If all fields are valid
-    if (isValid) {
-        alert("Message Sent Successfully!");
-
-        form.reset();
-    }
-
-    if (message.value.trim().length < 10) {
-    document.querySelector("#m-error").style.display = "block";
-    isValid = false;
-} else {
-    document.querySelector("#m-error").style.display = "none";
+function showStatus(text, isError) {
+  statusEl.textContent = text;
+  statusEl.style.display = "block";
+  statusEl.style.color = isError ? "#e74c3c" : "#2ecc71";
 }
 
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  statusEl.style.display = "none";
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const nameOk = senderName.value.trim().length >= 3;
+  const emailOk = emailRegex.test(senderEmail.value.trim());
+  const messageOk = message.value.trim().length >= 10;
+
+  nameError.style.display = nameOk ? "none" : "block";
+  emailError.style.display = emailOk ? "none" : "block";
+  messageError.style.display = messageOk ? "none" : "block";
+
+  if (!nameOk || !emailOk || !messageOk) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: senderName.value.trim(),
+        email: senderEmail.value.trim(),
+        message: message.value.trim(),
+        website: honeypot ? honeypot.value : "",
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.ok) {
+      showStatus("Message sent successfully! I'll get back to you soon.", false);
+      form.reset();
+    } else {
+      showStatus(data.error || "Something went wrong. Please try again.", true);
+    }
+  } catch (error) {
+    showStatus("Could not reach the server. Please try again later.", true);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message";
+  }
 });
-
-
-
-// form.addEventListener('submit', function (event) {
-//   event.preventDefault();
-//   let sNL = senderName.value;
-//   if (sNL.length < 3) {
-//     document.querySelector('#n-error').style.display = 'initial';
-//     document.querySelector('.contact-form button').setAttribute('disabled', 'disabled');
-
-//   } else {
-//     document.querySelector('#n-error').style.display = 'none';
-    
-//   }
-
-//   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//   // console.log(regex.test());
-//   if (regex.test(senderEmail.value)) {
-//     document.querySelector('#e-error').style.display = 'none';
-    
-//   } else {
-//     document.querySelector('#e-error').style.display = 'initial';
-    
-//   }
-//   senderName.value='';
-//   senderEmail.value = '';
-//   document.querySelector('#massage').value='';
-// });
